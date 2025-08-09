@@ -1,0 +1,80 @@
+@use  "../abstracts/mixins" as *;
+
+.composition{
+    position: relative;
+
+    &__photo{
+        width: 55%;
+        box-shadow: 0 1.15rem 4rem rgba(#222, .4);
+        border-radius: .3rem;       
+        position: absolute;
+        z-index: 1;
+        transition: all .2s;
+        outline-offset: 2rem;
+
+        @include respond(tab-port) { // width < 1200?
+            width: 50%;
+        }
+
+        @include respond(phone) { // width < 1200?
+        }
+
+        &--p1{
+            top: -2rem;
+            // left: 0;
+            left: 10%;
+
+            @include respond(phone) { // width < 1200?
+                left: 35%;
+                transform: translateX(-50%);
+            }
+        }
+    
+        &--p2{ 
+            top: 2rem;
+            right: 0;
+
+            @include respond(phone) { // width < 1200?
+                left: 80%;
+                transform: translateX(-50%);
+            }
+        }
+    
+        &--p3{
+            top: 7rem;
+            left: 30%;
+
+            @include respond(phone) { // width < 1200?
+                top: 5rem;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+        }
+
+        &:hover{
+            z-index: 2;
+            transform: scale(1.05) translateY(1rem);
+        }
+        
+    }
+    
+    &:hover &__photo:not(:hover){
+        transform: scale(.95);
+    }
+
+}
+
+.project-box{
+    border-top: 1px dashed #aaa;
+    margin-top: 3rem;
+    padding-top: 2rem;
+
+    .inner-container{
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+}

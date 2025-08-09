@@ -1,0 +1,39 @@
+.social{
+    position: fixed;
+    left: 5.5%;
+    top: 50%;
+    z-index: 5;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    
+    &__link{
+
+
+        svg{
+            width: 18px;
+            
+            .filling{
+                fill: #ddd;
+
+                &.dark{
+                    transition: all 1s;
+                    fill: #000;
+                }
+
+            }
+
+        }
+
+        &:hover svg .filling{
+            fill: #fff;
+        }
+
+    }
+
+    &__link:not(:last-child){
+        margin-bottom: 1rem;
+    }
+
+
+}

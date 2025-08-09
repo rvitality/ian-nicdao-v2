@@ -1,0 +1,82 @@
+@use  "../abstracts/mixins" as *;
+
+section{
+    background-color: #000;
+    color: #fff;
+}
+
+
+.section-about{
+    padding: 6rem 9rem 6rem 9rem;
+    
+    @include respond(phone) {
+        padding: 6rem 9rem 30rem 9rem;
+    }
+
+    &__row{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        @include respond(phone) {
+            grid-template-columns: 1fr;
+            gap: 5rem;
+        }
+    }
+
+    &__col:first-child{
+        margin-right: 3rem;
+        
+    }
+
+
+}
+
+.section-works{
+    padding: 14rem 9rem 9rem 9rem;
+}
+
+.section-contact{
+    padding: 3rem 9rem 9rem 9rem;
+}
+
+.book {
+    background-image: linear-gradient(105deg, 
+                                    rgba(#fff, .3) 0%,
+                                    rgba(#fff, .3) 50%,
+                                    transparent 50%) ,
+                            url(../../src/img/book-img.jpg);
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    border-radius: 3px;
+
+    @include respond(tab-land) {
+        background-image: linear-gradient(105deg, 
+        rgba(#fff, .3) 0%,
+        rgba(#fff, .3) 65%,
+        transparent 65%) ,
+        url(../../src/img/book-img.jpg);
+    }
+
+    @include respond(phone) {
+        background-image: linear-gradient(to right, 
+        rgba(#fff, .3) 0%,
+        rgba(#fff, .3) 100%),
+        url(../../src/img/book-img.jpg);
+    }
+
+    &__form {
+        width: 40%;
+        padding: 6rem 3rem 6rem 6rem;
+
+        @include respond(tab-land) {
+            width: 60%;
+        }
+
+        @include respond(phone) {
+            width: 100%;
+            padding: 6rem;
+        }
+
+    }
+}

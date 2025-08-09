@@ -1,0 +1,87 @@
+@use  "../abstracts/mixins" as *;
+
+.sub-grid-works{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: minmax(100px, auto);
+    grid-auto-flow: dense;
+    gap: 3rem;
+    cursor: pointer;
+    overflow: hidden;
+
+    @include respond(tab-port) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(phone) {
+        grid-template-columns: 1fr;
+    }
+    
+
+    &__box{
+        position: relative;
+        width: auto;
+        height: 300px;
+
+        &::before{
+            content: '';
+            box-shadow: inset 1px 1px 10px 0 #000000;
+            display: block;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            background-size: cover;
+
+        }
+
+        &:hover .sub-grid-works__overlay::before{
+            opacity: .2;
+        }
+
+        &:hover .sub-grid-works__overlay img{
+            opacity: 1;
+        }
+
+    }
+
+    &__overlay{
+
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            transition: .3s ease;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+        }
+
+        img{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 34px;
+            height: 34px;
+            z-index: 999;
+            opacity: 0;
+        }
+
+
+    }
+
+}

@@ -1,0 +1,148 @@
+@use  "../abstracts/mixins" as *;
+
+.menu {
+    cursor: pointer;
+    background: #fff;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    z-index: 99;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include respond(tab-land) { // width < 1200?
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    @include respond(tab-port) { // width < 900?
+        width: 3.3rem;
+        height: 3.3rem;
+    }
+
+    @include respond(phone) { // width < 600?
+        width: 4rem;
+        height: 4rem;
+    }
+
+    &--dark{
+        transition: all 1s;
+        background: #000;
+    }
+
+    &__checkbox{
+        display: flex;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        cursor: pointer;
+        opacity: 0; /* hide input */
+        z-index: 1; /* top of the menu */
+
+    
+        @include respond(tab-port) { // width < 900?
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    span{
+        width: 1.2rem;
+        height: 2px;
+        margin: .1rem;
+        background: #000;
+        border-radius: 4px;
+        -webkit-transition: all .5s cubic-bezier(.08,.81,.87,.71);
+        -moz-transition: all .5s cubic-bezier(.08,.81,.87,.71);
+        -ms-transition: all .5s cubic-bezier(.08,.81,.87,.71);
+        -o-transition: all .5s cubic-bezier(.08,.81,.87,.71);
+        transition: all .5s cubic-bezier(.08,.81,.87,.71);
+
+        
+        @include respond(tab-land) { // width < 1200?
+            width: 1.3rem;
+        }
+    
+        @include respond(tab-port) { // width < 900?
+        }
+        
+        @include respond(phone) {
+            width: 1.5rem;
+        }
+    }
+
+    &__line1 {
+        transform-origin: 4px 0px;
+    }
+      
+    &__line3 {
+        transform-origin: bottom right;
+    }
+
+    &__checkbox:checked ~ &__line1 {
+        background-color: #fff;
+        transform: rotate(45deg) translate(3px);
+
+          
+        @include respond(tab-port) { // width < 900?
+            transform: rotate(45deg) translate(3px);
+        }
+        
+        @include respond(phone) {
+        }
+    }
+    
+    &__checkbox:checked ~ &__line2 {
+        background-color: #fff;  
+        transform: rotate(495deg) translate(1px);  
+
+        @include respond(tab-port) { // width < 900?
+            transform: rotate(495deg) translate(0);
+        }
+        
+        @include respond(phone) {
+            transform: rotate(495deg) translate(-1px);
+        }
+    }
+
+    &__checkbox:checked ~ &__line3 {
+        background-color: #fff;
+        transform: rotate(45deg);
+        opacity: 0;
+    }
+
+
+}
+
+.menu__container{
+    position: relative;
+
+    .background{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background: #fff;
+        transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+        z-index: -1;
+        
+        &.enlarged{
+            transform: scale(180);
+        }
+    
+    }
+
+}
+
+
+
+  
+  
+
+  
