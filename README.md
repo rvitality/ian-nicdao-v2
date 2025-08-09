@@ -1,1 +1,1 @@
-# jc-photography
+# Ian Nicdao Portfolio
