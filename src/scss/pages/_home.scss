@@ -1,19 +1,18 @@
-@use  "../abstracts/mixins" as *;
+@use "../abstracts/mixins" as *;
 
-section{
+section {
     background-color: #000;
     color: #fff;
 }
 
-
-.section-about{
+.section-about {
     padding: 6rem 9rem 6rem 9rem;
-    
+
     @include respond(phone) {
-        padding: 6rem 9rem 30rem 9rem;
+        padding: 6rem 3rem 30rem 3rem;
     }
 
-    &__row{
+    &__row {
         display: grid;
         grid-template-columns: 1fr 1fr;
 
@@ -23,46 +22,41 @@ section{
         }
     }
 
-    &__col:first-child{
+    &__col:first-child {
         margin-right: 3rem;
-        
     }
-
-
 }
 
-.section-works{
+.section-works {
     padding: 14rem 9rem 9rem 9rem;
+
+    @include respond(phone) {
+        padding: 8rem 3rem 3rem 3rem;
+    }
 }
 
-.section-contact{
-    padding: 3rem 9rem 9rem 9rem;
+.section-contact {
+    @include respond(phone) {
+        padding: 3rem 3rem 3rem 3rem;
+    }
 }
 
 .book {
-    background-image: linear-gradient(105deg, 
-                                    rgba(#fff, .3) 0%,
-                                    rgba(#fff, .3) 50%,
-                                    transparent 50%) ,
-                            url(../../src/img/book-img.jpg);
+    background-image: linear-gradient(105deg, rgba(#fff, 0.3) 0%, rgba(#fff, 0.3) 50%, transparent 50%),
+        url(../../src/img/book-img.jpg);
     background-size: cover;
     background-position: center;
     object-fit: cover;
     border-radius: 3px;
 
     @include respond(tab-land) {
-        background-image: linear-gradient(105deg, 
-        rgba(#fff, .3) 0%,
-        rgba(#fff, .3) 65%,
-        transparent 65%) ,
-        url(../../src/img/book-img.jpg);
+        background-image: linear-gradient(105deg, rgba(#fff, 0.3) 0%, rgba(#fff, 0.3) 65%, transparent 65%),
+            url(../../src/img/book-img.jpg);
     }
 
     @include respond(phone) {
-        background-image: linear-gradient(to right, 
-        rgba(#fff, .3) 0%,
-        rgba(#fff, .3) 100%),
-        url(../../src/img/book-img.jpg);
+        background-image: linear-gradient(to right, rgba(#fff, 0.3) 0%, rgba(#fff, 0.3) 100%),
+            url(../../src/img/book-img.jpg);
     }
 
     &__form {
@@ -77,6 +71,5 @@ section{
             width: 100%;
             padding: 6rem;
         }
-
     }
 }
