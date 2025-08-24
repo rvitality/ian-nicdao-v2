@@ -73,3 +73,102 @@ section {
         }
     }
 }
+
+/* Modal */
+.modal {
+    display: none; /* hidden by default */
+    position: fixed;
+    z-index: 1000;
+    padding-top: 50px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.75); /* 50% black overlay */
+    animation: fadeIn 0.3s ease; /* overlay fade */
+    // background: #fff;
+
+    // width: 85% !important;
+    // height: 100% !important;
+    max-height: 85% !important;
+    // width: fit-content;
+    // height: fit-content;
+
+    @include respond(phone) {
+        width: 85% !important;
+        width: fit-content;
+        height: fit-content;
+    }
+
+    // @include respond(tab-port) {
+    //      max-height: 85% !important;
+    // }
+}
+
+.modal-content {
+    display: block;
+    margin: auto;
+    max-height: 100%;
+    border-radius: 10px;
+    animation: zoomIn 0.3s ease; /* image zoom fade */
+    max-width: 100%;
+    object-fit: contain;
+    max-height: 38rem;
+
+    @include respond(tab-port) {
+        height: 100%;
+    }
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    color: red;
+    opacity: .75;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+
+    top: 40px;
+    right: 60px;
+    font-size: 60px;
+
+    @include respond(tab-land) {
+        top: 20px;
+        right: 35px;
+        font-size: 40px;
+    }
+
+    @include respond(big-desktop) {
+        top: 40px;
+        right: 60px;
+        font-size: 60px;
+    }
+}
+
+.close:hover {
+    color: #bbb;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

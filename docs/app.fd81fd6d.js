@@ -1350,5 +1350,35 @@ var _NavExpand = _interopRequireDefault(require("./module/NavExpand"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 new _ParallaxScroll.default();
 new _NavExpand.default();
+var modal = document.getElementById("myModal");
+var modalImg = document.getElementById("modalImage");
+var closeBtn = document.querySelector(".close");
+var productImages = document.querySelectorAll(".project-img");
+console.log("====================================");
+console.log(productImages);
+console.log("====================================");
+
+// Open modal when clicking an image
+productImages === null || productImages === void 0 || productImages.forEach(function (img) {
+  img.addEventListener("click", function () {
+    console.log("====================================");
+    console.log("fire");
+    console.log("====================================");
+    modal.style.display = "block";
+    modalImg.src = img.src;
+  });
+});
+
+// Close modal on "X" click
+closeBtn.onclick = function () {
+  modal.style.display = "none";
+};
+
+// Close modal on outside click
+modal.onclick = function (e) {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+};
 },{"./module/ParallaxScroll":"QIJY","./module/NavExpand":"HXTe"}]},{},["s2Ev"], null)
-//# sourceMappingURL=app.fdeb73a5.js.map
+//# sourceMappingURL=app.fd81fd6d.js.map

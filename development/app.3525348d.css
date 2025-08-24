@@ -307,6 +307,96 @@ section {
   }
 }
 
+/* Modal */
+.modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 1000;
+  padding-top: 50px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.75); /* 50% black overlay */
+  animation: fadeIn 0.3s ease; /* overlay fade */
+  max-height: 85% !important;
+}
+@media only screen and (max-width: 37.5em) {
+  .modal {
+    width: 85% !important;
+    width: fit-content;
+    height: fit-content;
+  }
+}
+
+.modal-content {
+  display: block;
+  margin: auto;
+  max-height: 100%;
+  border-radius: 10px;
+  animation: zoomIn 0.3s ease; /* image zoom fade */
+  max-width: 100%;
+  object-fit: contain;
+  max-height: 38rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .modal-content {
+    height: 100%;
+  }
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  color: red;
+  opacity: 0.75;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+  top: 40px;
+  right: 60px;
+  font-size: 60px;
+}
+@media only screen and (max-width: 75em) {
+  .close {
+    top: 20px;
+    right: 35px;
+    font-size: 40px;
+  }
+}
+@media only screen and (min-width: 112.5em) {
+  .close {
+    top: 40px;
+    right: 60px;
+    font-size: 60px;
+  }
+}
+
+.close:hover {
+  color: #bbb;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 .menu {
   cursor: pointer;
   background: #fff;
@@ -656,6 +746,11 @@ section {
   opacity: 0;
 }
 
+.project-img {
+  position: relative;
+  z-index: 5;
+}
+
 .sub-grid-works {
   position: relative;
   display: grid;
@@ -702,6 +797,9 @@ section {
 .sub-grid-works__box:hover .sub-grid-works__overlay img {
   opacity: 1;
 }
+.sub-grid-works__overlay {
+  pointer-events: none;
+}
 .sub-grid-works__overlay::before {
   content: "";
   position: absolute;
@@ -716,9 +814,11 @@ section {
   align-items: center;
   justify-content: center;
   opacity: 0;
+  pointer-events: none;
 }
 .sub-grid-works__overlay img {
   position: absolute;
+  pointer-events: none;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);

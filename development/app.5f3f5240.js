@@ -1350,6 +1350,36 @@ var _NavExpand = _interopRequireDefault(require("./module/NavExpand"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 new _ParallaxScroll.default();
 new _NavExpand.default();
+var modal = document.getElementById("myModal");
+var modalImg = document.getElementById("modalImage");
+var closeBtn = document.querySelector(".close");
+var productImages = document.querySelectorAll(".project-img");
+console.log("====================================");
+console.log(productImages);
+console.log("====================================");
+
+// Open modal when clicking an image
+productImages === null || productImages === void 0 || productImages.forEach(function (img) {
+  img.addEventListener("click", function () {
+    console.log("====================================");
+    console.log("fire");
+    console.log("====================================");
+    modal.style.display = "block";
+    modalImg.src = img.src;
+  });
+});
+
+// Close modal on "X" click
+closeBtn.onclick = function () {
+  modal.style.display = "none";
+};
+
+// Close modal on outside click
+modal.onclick = function (e) {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+};
 },{"./module/ParallaxScroll":"../src/js/module/ParallaxScroll.js","./module/NavExpand":"../src/js/module/NavExpand.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -1375,7 +1405,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52661" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64073" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
