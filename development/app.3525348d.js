@@ -172,7 +172,7 @@ module.exports = reloadCSS;
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./../img/hero-1.jpg":[["hero-1.f4f5db62.jpg","../src/img/hero-1.jpg"],"../src/img/hero-1.jpg"],"./../img/book-img.jpg":[["book-img.d8b01695.jpg","../src/img/book-img.jpg"],"../src/img/book-img.jpg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./../img/hero-1.jpg":[["hero-1.f4f5db62.jpg","../src/img/hero-1.jpg"],"../src/img/hero-1.jpg"],"./../img/building-2.jpg":[["building-2.80c897d6.jpg","../src/img/building-2.jpg"],"../src/img/building-2.jpg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;

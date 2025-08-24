@@ -275,23 +275,26 @@ section {
 }
 
 .book {
-  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 50%, transparent 50%), url(/book-img.d8b01695.jpg);
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 50%, transparent 50%), url(/building-2.80c897d6.jpg);
   background-size: cover;
   background-position: center;
   object-fit: cover;
   border-radius: 3px;
+  position: relative;
 }
-@media only screen and (max-width: 75em) {
-  .book {
-    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 65%, transparent 65%), url(/book-img.d8b01695.jpg);
-  }
-}
-@media only screen and (max-width: 37.5em) {
-  .book {
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 100%), url(/book-img.d8b01695.jpg);
-  }
+.book::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #000;
+  opacity: 0.25;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 .book__form {
+  position: relative;
+  z-index: 2;
   width: 40%;
   padding: 6rem 3rem 6rem 6rem;
 }
