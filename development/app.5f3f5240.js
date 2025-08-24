@@ -1354,16 +1354,10 @@ var modal = document.getElementById("myModal");
 var modalImg = document.getElementById("modalImage");
 var closeBtn = document.querySelector(".close");
 var productImages = document.querySelectorAll(".project-img");
-console.log("====================================");
-console.log(productImages);
-console.log("====================================");
 
 // Open modal when clicking an image
 productImages === null || productImages === void 0 || productImages.forEach(function (img) {
   img.addEventListener("click", function () {
-    console.log("====================================");
-    console.log("fire");
-    console.log("====================================");
     modal.style.display = "block";
     modalImg.src = img.src;
   });
@@ -1374,12 +1368,12 @@ closeBtn.onclick = function () {
   modal.style.display = "none";
 };
 
-// Close modal on outside click
-modal.onclick = function (e) {
-  if (e.target === modal) {
+// Close modal when clicking anything outside the image
+modal.addEventListener("click", function (e) {
+  if (e.target !== modalImg) {
     modal.style.display = "none";
   }
-};
+});
 },{"./module/ParallaxScroll":"../src/js/module/ParallaxScroll.js","./module/NavExpand":"../src/js/module/NavExpand.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

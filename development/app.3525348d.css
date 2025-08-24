@@ -124,7 +124,7 @@ body {
   position: fixed;
   width: 100%;
   padding: 2rem 5rem;
-  z-index: 5;
+  z-index: 999;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -313,22 +313,19 @@ section {
   position: fixed;
   z-index: 1000;
   padding-top: 50px;
-  left: 50%;
-  top: 50%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 105vh;
+  width: 100vw;
   transform: translate(-50%, -50%);
   padding: 2.5rem;
   border-radius: 1rem;
   overflow: auto;
   background: rgba(0, 0, 0, 0.75); /* 50% black overlay */
   animation: fadeIn 0.3s ease; /* overlay fade */
-  max-height: 85% !important;
-}
-@media only screen and (max-width: 37.5em) {
-  .modal {
-    width: 85% !important;
-    width: fit-content;
-    height: fit-content;
-  }
+  transform: translate(0);
 }
 
 .modal-content {
@@ -340,6 +337,9 @@ section {
   max-width: 100%;
   object-fit: contain;
   max-height: 38rem;
+  top: 50%;
+  position: relative;
+  transform: translateY(-50%);
 }
 @media only screen and (max-width: 56.25em) {
   .modal-content {
@@ -350,8 +350,7 @@ section {
 /* Close button */
 .close {
   position: absolute;
-  color: red;
-  opacity: 0.75;
+  color: #fff;
   font-weight: bold;
   cursor: pointer;
   transition: color 0.2s;

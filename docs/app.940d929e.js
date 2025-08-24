@@ -1354,16 +1354,10 @@ var modal = document.getElementById("myModal");
 var modalImg = document.getElementById("modalImage");
 var closeBtn = document.querySelector(".close");
 var productImages = document.querySelectorAll(".project-img");
-console.log("====================================");
-console.log(productImages);
-console.log("====================================");
 
 // Open modal when clicking an image
 productImages === null || productImages === void 0 || productImages.forEach(function (img) {
   img.addEventListener("click", function () {
-    console.log("====================================");
-    console.log("fire");
-    console.log("====================================");
     modal.style.display = "block";
     modalImg.src = img.src;
   });
@@ -1374,11 +1368,11 @@ closeBtn.onclick = function () {
   modal.style.display = "none";
 };
 
-// Close modal on outside click
-modal.onclick = function (e) {
-  if (e.target === modal) {
+// Close modal when clicking anything outside the image
+modal.addEventListener("click", function (e) {
+  if (e.target !== modalImg) {
     modal.style.display = "none";
   }
-};
+});
 },{"./module/ParallaxScroll":"QIJY","./module/NavExpand":"HXTe"}]},{},["s2Ev"], null)
-//# sourceMappingURL=app.fd81fd6d.js.map
+//# sourceMappingURL=app.940d929e.js.map
