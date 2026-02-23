@@ -77,3 +77,46 @@
         }
     }
 }
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+
+    @include respond(phone) {
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    &__item {
+        color: #55c57a;
+        text-decoration: none;
+        font-size: 1.6rem;
+        font-weight: 500;
+        padding: 0.8rem 1.6rem;
+        border: 2px solid #55c57a;
+        border-radius: 4px;
+        transition: all 0.3s;
+        display: inline-block;
+
+        @include respond(phone) {
+            font-size: 1.4rem;
+            padding: 0.6rem 1.2rem;
+        }
+
+        &:hover {
+            background-color: #55c57a;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(85, 197, 122, 0.3);
+        }
+
+        &:active {
+            transform: translateY(0);
+            box-shadow: 0 5px 10px rgba(85, 197, 122, 0.3);
+        }
+    }
+}
